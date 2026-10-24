@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f6">
+  <meta name="description" content="Маленький сюрприз, створений з теплом для Сонечка.">
+  <title>Для тебе, Сонечко ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" id="home-link">little things <span>♡</span></a>
+    <span class="topbar-note">зроблено з теплом</span>
+  </header>
+
+  <main>
+    <!-- ВСТУП -->
+    <section class="screen active" id="intro" aria-labelledby="intro-title">
+      <div class="hero">
+        <div class="eyebrow"><span class="tiny-heart">♥</span> маленький сюрприз для тебе</div>
+
+        <div class="envelope-wrap">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="letter-peek"></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-seal">♡</div>
+          </div>
+          <span class="sparkle sparkle-one">✦</span>
+          <span class="sparkle sparkle-two">✧</span>
+          <span class="sparkle sparkle-three">✦</span>
+        </div>
+
+        <p class="eyebrow">для наймилішої людини</p>
+        <h1 id="intro-title">Привіт,<br><span>Сонечко.</span></h1>
+        <p class="subtitle">
+          Я дещо для тебе підготував.<br>
+          Маленька пригода, у кінці якої є дещо особливе.
+        </p>
+
+        <button class="btn btn-primary" id="start-btn">
+          Відкрити конверт <span>♡</span>
+        </button>
+        <p class="micro-note">ніякого поспіху — просто насолоджуйся ✿</p>
+      </div>
+    </section>
+
+    <!-- ВСТУП ДО КВЕСТУ -->
+    <section class="screen" id="welcome" aria-labelledby="welcome-title" hidden>
+      <div class="content-card">
+        <div class="illustration">🌷</div>
+        <p class="eyebrow">перед початком</p>
+        <h2 id="welcome-title">Є одна маленька місія</h2>
+        <p class="body-copy">
+          На тебе чекають кілька загадок, маленькі приємності
+          та лист наприкінці. Просто обирай відповіді й відкривай
+          те, що заховано між рядками.
+        </p>
+        <div class="mini-note">Підказка: правильні відповіді тут не важливіші за усмішку.</div>
+        <button class="btn btn-primary" id="begin-btn">
+          Починаємо <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ЗАГАДКИ -->
+    <section class="screen" id="quiz" aria-labelledby="quiz-title" hidden>
+      <div class="quiz-card">
+        <div class="progress-info">
+          <span id="stage-label">Маленька загадка</span>
+          <span id="progress-label">1 / 3</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <div class="quiz-icon" id="quiz-icon">♡</div>
+        <p class="eyebrow" id="quiz-category">трошки магії</p>
+        <h2 id="quiz-title">Готова до загадки?</h2>
+        <p class="body-copy" id="quiz-question"></p>
+
+        <div class="answer-list" id="answer-list"></div>
+        <p class="feedback" id="quiz-feedback" aria-live="polite"></p>
+
+        <button class="btn btn-primary" id="next-question-btn" hidden>
+          Далі <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- СЕРДЕЧКА З ПОВІДОМЛЕННЯМИ -->
+    <section class="screen" id="treasures" aria-labelledby="treasures-title" hidden>
+      <div class="content-card">
+        <p class="eyebrow">маленькі скарби</p>
+        <h2 id="treasures-title">Три речі, які хочу тобі сказати</h2>
+        <p class="body-copy">
+          Натисни на кожне сердечко. У кожному заховалося
+          дещо маленьке, але щире.
+        </p>
+
+        <div class="heart-grid" id="heart-grid">
+          <button class="heart-tile" data-treasure="0" aria-label="Відкрити перше сердечко">
+            <span class="heart-symbol">♡</span>
+            <span class="heart-caption">перше</span>
+          </button>
+          <button class="heart-tile" data-treasure="1" aria-label="Відкрити друге сердечко">
+            <span class="heart-symbol">♡</span>
+            <span class="heart-caption">друге</span>
+          </button>
+          <button class="heart-tile" data-treasure="2" aria-label="Відкрити третє сердечко">
+            <span class="heart-symbol">♡</span>
+            <span class="heart-caption">третє</span>
+          </button>
+        </div>
+
+        <p class="treasure-counter" id="treasure-counter" aria-live="polite">
+          Відкрито 0 із 3
+        </p>
+        <div class="treasure-message" id="treasure-message" aria-live="polite" hidden></div>
+
+        <button class="btn btn-primary" id="to-final-btn" hidden>
+          Знайти останній сюрприз <span>♡</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ФІНАЛЬНИЙ ЛИСТ -->
+    <section class="screen" id="final" aria-labelledby="final-title" hidden>
+      <div class="final-card">
+        <div class="final-decoration">✿　♡　✿</div>
+        <p class="eyebrow">це для тебе</p>
+        <h2 id="final-title">Моє Сонечко,</h2>
+
+        <div class="letter-paper">
+          <p id="letter-greeting">Привіт, Сонечко ♡</p>
+          <div id="letter-body"></div>
+          <p class="letter-signature" id="letter-signature">
+            З теплом, від мене ♡
+          </p>
+        </div>
+
+        <p class="final-footnote">
+          Цей маленький світ існує, щоб нагадати тобі,
+          що ти особлива людина.
+        </p>
+
+        <button class="btn btn-secondary" id="restart-btn">
+          Пройти ще раз ↺
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>створено з теплом</span>
+    <span class="footer-heart">♡</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
